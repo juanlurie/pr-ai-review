@@ -36,11 +36,15 @@ def safe_average(numbers):
 
 
 def print_stats(numbers):
-    print("Sum:", calculate_sum(numbers))
-    print("Average:", safe_average(numbers))
-    print("Count:", len(numbers))
-    print("Max:", max(numbers))
-    print("Min:", min(numbers))
+    filtered = [n for n in numbers if n is not None]
+    if not filtered:
+        print("No valid numbers to process")
+        return
+    print("Sum:", calculate_sum(filtered))
+    print("Average:", safe_average(filtered))
+    print("Count:", len(filtered))
+    print("Max:", max(filtered))
+    print("Min:", min(filtered))
 
 
 print_stats(values)
