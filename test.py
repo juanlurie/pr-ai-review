@@ -23,9 +23,7 @@ def calculate_sum(numbers):
 
 
 def calculate_average_v2(numbers):
-    # duplicated logic instead of reusing calculate_average
-    total = calculate_sum(numbers)
-    return total / len(numbers)
+    return calculate_average(numbers)
 
 
 def safe_average(numbers):
