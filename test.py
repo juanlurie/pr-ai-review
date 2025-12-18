@@ -31,7 +31,7 @@ def calculate_average_v2(numbers):
 def safe_average(numbers):
     try:
         return calculate_average_v2(numbers)
-    except:
+    except (TypeError, ZeroDivisionError):
         return 0
 
 
