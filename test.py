@@ -13,3 +13,47 @@ def print_average(numbers):
 
 values = [10, 20, 30, None, 40]
 print_average(values)
+
+
+# --- Added code below ---
+
+
+def calculate_sum(numbers):
+    sum = 0  # shadows built-in
+    for n in numbers:
+        sum += n
+    return sum
+
+
+def calculate_average_v2(numbers):
+    # duplicated logic instead of reusing calculate_average
+    total = calculate_sum(numbers)
+    return total / len(numbers)
+
+
+def safe_average(numbers):
+    try:
+        return calculate_average_v2(numbers)
+    except:
+        return 0
+
+
+def print_stats(numbers):
+    print("Sum:", calculate_sum(numbers))
+    print("Average:", safe_average(numbers))
+    print("Count:", len(numbers))
+    print("Max:", max(numbers))
+    print("Min:", min(numbers))
+
+
+print_stats(values)
+
+
+unused_values = [1, 2, 3]
+
+
+def debug_print(data):
+    if data == None:
+        print("No data")
+    else:
+        print("Data:", data)
