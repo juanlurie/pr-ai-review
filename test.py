@@ -19,10 +19,7 @@ print_average(values)
 
 
 def calculate_sum(numbers):
-    sum = 0  # shadows built-in
-    for n in numbers:
-        sum += n
-    return sum
+    return sum(n for n in numbers if n is not None)
 
 
 def calculate_average_v2(numbers):
